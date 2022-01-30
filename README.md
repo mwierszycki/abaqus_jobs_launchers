@@ -22,13 +22,13 @@ To start Abaqus' job manually or even with simple scripts the three above modes 
 
 ## Running Abaqus job using \*.com file directly
 
-When abaqus command is invoked in the terminal the SMALauncher (ABQLauncher in 2021 and earlier versions) program is run. Next SMALuncher starts the sequence of subprocesses. The sequence depends on which phases of an analysis is performed (see Abaqus manual Abaqus/Standard and Abaqus/Explicit execution). Each stage is driven by Python script run by SMAPython - Python distributions delivered with Abaqus. The driver script creates the job_name.com file based on parameter given with abaqus command (e.g. number of cpus, user subroutines, etc), Abaqus settings (set of \*.env files) and input file. The \*.com file is in fact a Python script.
+When abaqus command is invoked in the terminal the SMALauncher (ABQLauncher in 2021 and earlier versions) program is run. Next SMALuncher starts the sequence of subprocesses. The sequence depends on which phases of an analysis is performed (see Abaqus manual Abaqus/Standard and Abaqus/Explicit execution). Each stage is driven by Python script run by SMAPython - Python distributions delivered with Abaqus. The driver script creates the job_name.com file based on parameter given with abaqus command (e.g. number of cpus, user subroutines, etc), Abaqus settings (set of \*.env files) and input file. The \*.com file is in fact a Python script which is run by SMAPython in the subsequent steps.
 
 The \*.com file can be also created separately using command:
 
 $ abaqus createComOnly -j job_name
 
-The simple Python script can used to run job using \*.com file:
+and next, the simple Python script can used to run job using \*.com file:
 ```
 $ cat runComFile.py
 import os, sys, subprocess, driverUtils
@@ -55,6 +55,8 @@ sys.exit(retCode)
 $ abaqus python runComFile.py job_name.com
 ```
 Direct usage of Python popen method enables to get and to use ID of the process, to redirect stdout and stderr in any way, to check if the running process has terminated, to send the signal to the process, to terminate or kill the process and much more e.g. read Abaqus files (\*.dat, \*.msg, \*.sta, \*.odb) during process execution and control process based on results.
+
+Please note that this script is not intended to be replacement of SMALanucher. It's just an example how to execute Abaqus job in alternative way.
 
 Happy running Abaqus jobs! 
 
