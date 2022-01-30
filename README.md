@@ -56,7 +56,7 @@ $ abaqus python runComFile.py job_name.com
 ```
 Direct usage of Python popen method enables to get and to use ID of the process, to redirect stdout and stderr in any way, to check if the running process has terminated, to send the signal to the process, to terminate or kill the process and much more e.g. read Abaqus files (\*.dat, \*.msg, \*.sta, \*.odb) during process execution and control process based on results.
 
-Please note that this script is not intended to be replacement of SMALanucher. It's just an example how to execute Abaqus job in alternative way.
+Please note that this script is not intended to be a replacement of SMALanucher. It's just an example of how to execute Abaqus job in an alternative way.
 
 Happy running Abaqus jobs! 
 
