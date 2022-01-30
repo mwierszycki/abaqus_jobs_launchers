@@ -1,7 +1,9 @@
 # Regular and alternative Abaqus job running methods
 
-## Regular methods
 Running Abaqus from the command line is quite common not only on Linux machines. It's much more flexible and convenient than using Abaqus/CAE or other GUI apps in many situations. In some cases like HPC servers, cloud services it's prefered or even obvious method. 
+
+## Regular methods
+
 Abaqus job can be start from command line in three modes:
 ```
 abaqus -j job_name -ba[ckground]
