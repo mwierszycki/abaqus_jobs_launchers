@@ -1,6 +1,6 @@
 # Regular and alternative Abaqus job running methods
 
-Running Abaqus from the command line is quite common not only on Linux machines. It's much more flexible and convenient than using Abaqus/CAE or other GUI apps in many situations. In some cases like HPC servers, cloud services it's prefered or even obvious method. 
+Running Abaqus from the command line is quite common not only on Linux machines. It's much more flexible and convenient than using Abaqus/CAE or other GUI apps in many situations. In some cases like HPC servers, cloud services, it's prefered or even obvious method. 
 
 ## Regular methods
 
@@ -12,11 +12,11 @@ This option will submit the job to run in the background (default mode). It's th
 ```
 abaqus -j job_name -int[eractive]
 ```
-This option will cause the job to run in the foreground. For Abaqus/Standard the log file and for Abaqus/Explicit the status file and the log file will be output to the stdout (terminal).
+In this option the job will run in the foreground. For Abaqus/Standard the log file and for Abaqus/Explicit the status file and the log file will be output to the stdout (terminal).
 ```
 abaqus -j job_name -seq[uential]
 ```
-This option will submit the job to run in the foreground. However the log/sta files will not be output to the stdout. The output info will be saved in the file `job-name.log` in the current directory like in the case of background mode.
+This option will submit the job to run in the foreground. However the log/sta files will not be output to the stdout. The output info will be saved in the file job-name.log in the current directory like in the case of the background mode.
 
 To start Abaqus' job manually or even with simple scripts the three above modes are effective enough in regular work for most users. However alternative Abaqus job running methods can be useful for sysadmins or devops to manage abaqus processes more effectively.
 
@@ -54,7 +54,7 @@ sys.exit(retCode)
 
 $ abaqus python runComFile.py job_name.com
 ```
-Direct usage of Python popen method enables to get and to use ID of the process, to redirect stdout and stderr in any way, to check if the running process has terminated, to send the signal to the process, to terminate or kill the process and much more e.g. read Abaqus files (`*.dat`, `*.msg`, `*.sta`, `*.odb`) during process execution and control process based on results.
+Direct usage of Python Popen method enables to get and to use ID of the process, to redirect stdout and stderr in any way, to check if the running process has terminated, to send the signal to the process, to terminate or kill the process and much more e.g. read Abaqus files (`*.dat`, `*.msg`, `*.sta`, `*.odb`) during process execution and control process based on results.
 
 **Please note that this script is not intended to be a replacement of `SMALanucher`. It's just an example of how to execute Abaqus job in an alternative way.**
 
